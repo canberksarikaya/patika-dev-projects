@@ -30,32 +30,52 @@ public class Main
     static Scanner input = new Scanner(System.in);
     public static void main(String[] args)
     {
-        String[] fruitArray = {"Armut", "Elma", "Domates", "Muz", "Patlıcan"};
-        float[] kgSalePrice = {2.14f, 3.67f, 1.11f, 0.95f, 5.00f};
+        Product[] products = {
+                new Product("Armut", 2.14),
+                new Product("Elma", 3.67),
+                new Product("Domates", 1.11),
+                new Product("Muz", 0.95),
+                new Product("Patlıcan", 5.00)
+        };
 
-        float totalPrice = totalPriceCalculator(fruitArray, kgSalePrice);
+        double totalPrice = totalPriceCalculator(products);
 
         System.out.println("Toplam Tutar : " + totalPrice + " TL");
     }
 
-    /**
-     * Kullanıcıdan her bir ürün için kilogram miktarını alır ve o ürüne ait fiyatla çarpar,
-     * sonrasında toplam fiyatı hesaplar.
-     *
-     * @param fruitArray Ürün isimlerini içeren dizi
-     * @param kgSalePrice Ürünlerin kilogram başına satış fiyatlarını içeren dizi
-     * @return Tüm ürünlerin toplam fiyatı
-     * */
-    private static float totalPriceCalculator(String[] fruitArray, float[] kgSalePrice)
+    private static double totalPriceCalculator(Product[] products)
     {
-        float totalPrice = 0.0f;
+        double totalPrice = 0;
 
-        for (int i = 0; i < fruitArray.length; i++)
+        for (Product product : products)
         {
-            System.out.println(fruitArray[i] + " Kaç Kilo?");
-            totalPrice += kgSalePrice[i] * input.nextInt();
+            System.out.println(product.getName() + " Kaç Kilo?");
+            double kilogram =  input.nextInt();
+            totalPrice += kilogram * product.getPricePerKg();
         }
 
         return totalPrice;
+    }
+}
+
+class Product
+{
+    private String name;
+    private double pricePerKg;
+
+    Product (String name, double pricePerKg)
+    {
+        this.name = name;
+        this.pricePerKg = pricePerKg;
+    }
+
+    public String getName()
+    {
+        return name;
+    }
+
+    public double getPricePerKg()
+    {
+        return pricePerKg;
     }
 }
