@@ -164,7 +164,7 @@ class Ticket
      * */
     public Ticket(int distance, int age, int travelType) throws Exception
     {
-        if (distance < 0 || age < 0)
+        if (distance < 0 || age < 0 || (travelType != 1 && travelType != 2))
         {
             throw new IllegalArgumentException("Hatalı Veri Girdiniz!");
         }
