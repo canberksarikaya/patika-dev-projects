@@ -2,6 +2,19 @@ package patika.vkicalculation;
 
 import java.util.Scanner;
 
+/**
+ * <p>Bu sınıf, kullanıcıdan boy ve kilo bilgisi alarak VKİ (Vücut Kitle İndeksi / BMI)
+ * hesaplayan konsol uygulamasıdır.</p>
+ *
+ * <p>Formül: BMI = kilo / (boy * boy)</p>
+ *
+ * <p>Kullanıcıdan metre cinsinden boy, kilogram cinsinden ağırlık girmesi istenmektedir.
+ * Ardından sonuç ekrana yazdırılır.</p>
+ *
+ * @author Canberk Sarıkaya
+ * @version 1.0
+ * */
+
 public class Main
 {
     public static void main(String[] args)
@@ -19,8 +32,16 @@ public class Main
         System.out.println("Vücut Kitle İndeksiniz: " + bmi);
     }
 
-    private static float bmiCalculation(int kilogram, float heigth)
+    /**
+     * Kullanıcının boy ve kilosuna göre Vücut Kitle İndeksi (BMI) hesaplanır.
+     *
+     * @param kilogram Kullanıcının kilosu (kg cinsinden)
+     * @param height Kullanıcının boyu (metre cinsinden)
+     * @return Hesaplanan BMI değeri
+     * */
+
+    private static float bmiCalculation(int kilogram, float height)
     {
-        return kilogram / (heigth * heigth);
+        return kilogram / (height * height);
     }
 }
