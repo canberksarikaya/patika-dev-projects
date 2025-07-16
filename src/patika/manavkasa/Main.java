@@ -43,6 +43,13 @@ public class Main
         System.out.println("Toplam Tutar : " + totalPrice + " TL");
     }
 
+    /**
+     * Kullanıcıdan her ürün için kilogram bilgisi alınır, fiyatla çarpar ve
+     * toplam tutarı döner.
+     *
+     * @param products Hesaplamaya dahil edilecek ürün dizisi
+     * @return Tüm ürünlerin toplam fiyatı
+     * */
     private static double totalPriceCalculator(Product[] products)
     {
         double totalPrice = 0;
@@ -58,22 +65,42 @@ public class Main
     }
 }
 
+/**
+ * Product sınıfı, bir manav ürününü temsil eder.
+ * Her ürünün adı, kilogram başına fiyatı bulunur.
+ * */
 class Product
 {
     private String name;
     private double pricePerKg;
 
+    /**
+     * Product sınıfının kurucu metodudur.
+     *
+     * @param name Ürünün adı
+     * @param pricePerKg Kilogram başına fiyat
+     * */
     Product (String name, double pricePerKg)
     {
         this.name = name;
         this.pricePerKg = pricePerKg;
     }
 
+    /**
+     * Ürünün adını döner.
+     *
+     * @return Ürün adı
+     * */
     public String getName()
     {
         return name;
     }
 
+    /**
+     * Ürünün kilogram başına fiyatını döner.
+     *
+     * @return Fiyat (TL/kg)
+     * */
     public double getPricePerKg()
     {
         return pricePerKg;
