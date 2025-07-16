@@ -2,6 +2,12 @@ package patika.cinzodyak;
 
 import java.util.Scanner;
 
+enum ChineseZodiac
+{
+    MAYMUN, HOROZ, KOPEK, DOMUZ, FARE, OKUZ,
+    KAPLAN, TAVSAN, EJDERHA, YILAN, AT, KOYUN;
+}
+
 public class Main
 {
     public static void main(String[] args)
@@ -50,6 +56,20 @@ public class Main
         if (modBirthYear >= 0 && modBirthYear < zodiacs.length)
         {
             return zodiacs[modBirthYear];
+        }
+        else
+        {
+            return "Unknown";
+        }
+    }
+
+    // Üçüncü yol, enum kullanarak daha da kısaltmak
+
+    private static String zodiacCalculatorThree(int modBirthYear)
+    {
+        if (modBirthYear >= 0 && modBirthYear < 12)
+        {
+            return ChineseZodiac.values()[modBirthYear].toString();
         }
         else
         {
