@@ -2,6 +2,29 @@ package patika.manavkasa;
 
 import java.util.Scanner;
 
+/**
+ * <p>
+ *     Uygulama, manav ürünlerinden alınan kilogram miktarına göre toplam tutarı
+ *     hesaplar.
+ * </p>
+ *
+ * <p>
+ *     Kullanıcıdan sırasıyla her meyve/sebze için kaç kilogram almak istediği sorulduktan sonra
+ *     tüm ürünlerin fiyatları ile çarpılarak toplam tutar hesaplanır.
+ *
+ *     <ul>
+ *         <li>Armut: 2.14 TL/kg</li>
+ *         <li>Elma: 3.67 TL/kg</li>
+ *         <li>Domates: 1.11 TL/kg</li>
+ *         <li>Muz: 0.95 TL/kg</li>
+ *         <li>Patlıcan: 5.00 TL/kg</li>
+ *     </ul>
+ *
+ * @author Canberk Sarıkaya
+ * @version 1.0
+ * </p>
+ * */
+
 public class Main
 {
     static Scanner input = new Scanner(System.in);
@@ -15,6 +38,14 @@ public class Main
         System.out.println("Toplam Tutar : " + totalPrice + " TL");
     }
 
+    /**
+     * Kullanıcıdan her bir ürün için kilogram miktarını alır ve o ürüne ait fiyatla çarpar,
+     * sonrasında toplam fiyatı hesaplar.
+     *
+     * @param fruitArray Ürün isimlerini içeren dizi
+     * @param kgSalePrice Ürünlerin kilogram başına satış fiyatlarını içeren dizi
+     * @return Tüm ürünlerin toplam fiyatı
+     * */
     private static float totalPriceCalculator(String[] fruitArray, float[] kgSalePrice)
     {
         float totalPrice = 0.0f;
