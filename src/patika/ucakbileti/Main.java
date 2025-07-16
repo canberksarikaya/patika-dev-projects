@@ -6,6 +6,12 @@ public class Main
 {
     static Scanner input = new Scanner(System.in);
 
+    static final double kmDiscount = 0.10;
+    static final double travelTypeDiscount = 0.20;
+    static final double underTwelveDiscount = 0.5;
+    static final double underTwentyFourDiscount = 0.1;
+    static final double upperSixtyFiveDiscount = 0.3;
+
     public static void main(String[] args)
     {
         System.out.println("Mesafeyi km türünden giriniz: ");
@@ -32,9 +38,6 @@ public class Main
 
     private static int totalPrice(int km, int age, int travelType)
     {
-        double kmDiscount = 0.10;
-        double travelTypeDiscount = 0.20;
-
         double totalPrice = switch (travelType)
         {
             case 1 ->
@@ -62,10 +65,6 @@ public class Main
 
     private static double ageDiscountCalculator(double totalPrice, int age)
     {
-        double underTwelveDiscount = 0.5;
-        double underTwentyFourDiscount = 0.1;
-        double upperSixtyFiveDiscount = 0.3;
-
         if (age < 12)
         {
             double discount = totalPrice * underTwelveDiscount;
