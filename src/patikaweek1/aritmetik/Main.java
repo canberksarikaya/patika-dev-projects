@@ -1,4 +1,4 @@
-package patika.aritmetik;
+package patikaweek1.aritmetik;
 
 import java.util.Scanner;
 

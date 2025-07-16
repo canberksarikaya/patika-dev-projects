@@ -1,4 +1,4 @@
-package patika.artikyil;
+package patikaweek1.artikyil;
 
 import java.util.Scanner;
 

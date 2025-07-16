@@ -1,4 +1,4 @@
-package patika.ucakbileti;
+package patikaweek1.ucakbileti;
 
 import java.util.Scanner;
 

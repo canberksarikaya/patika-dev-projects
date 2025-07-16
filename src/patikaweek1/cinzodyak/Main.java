@@ -1,4 +1,4 @@
-package patika.cinzodyak;
+package patikaweek1.cinzodyak;
 
 import java.util.Scanner;
 

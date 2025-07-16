@@ -1,4 +1,4 @@
-package patika.vkicalculation;
+package patikaweek1.vkicalculation;
 
 import java.util.Scanner;
 

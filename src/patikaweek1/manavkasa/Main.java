@@ -1,4 +1,4 @@
-package patika.manavkasa;
+package patikaweek1.manavkasa;
 
 import java.util.Scanner;
 
