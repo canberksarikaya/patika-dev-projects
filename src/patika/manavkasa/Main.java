@@ -49,13 +49,11 @@ public class Main
     private static float totalPriceCalculator(String[] fruitArray, float[] kgSalePrice)
     {
         float totalPrice = 0.0f;
-        int kilogram = 0;
 
         for (int i = 0; i < fruitArray.length; i++)
         {
             System.out.println(fruitArray[i] + " Kaç Kilo?");
-            kilogram = input.nextInt();
-            totalPrice += kgSalePrice[i] * kilogram;
+            totalPrice += kgSalePrice[i] * input.nextInt();
         }
 
         return totalPrice;
