@@ -2,6 +2,27 @@ package patika.cinzodyak;
 
 import java.util.Scanner;
 
+/**
+ * <p>
+ *     Bu uygulama, kullanıcının doğum yılına göre Çin Zodyağı burcunu hesaplar.
+ *     Aynı işlemi üç farklı yönteme ayırdım;
+ *
+ *     <ul>
+ *         <li>{@code switch-case} yapısı ile</li>
+ *         <li>Dizi kullanarak</li>
+ *         <li>{@link ChineseZodiac} enum sınıfı ile</li>
+ *     </ul>
+ * </p>
+ *
+ * <p>
+ *     12 Hayvandan oluşan Çin Zodyağı döngüsünde burç, doğum yılının 12 ye bölünüp
+ *     kalan değer ile tespit edilir.
+ * </p>
+ *
+ * @author Canberk Sarıkaya
+ * @version 1.0
+ * */
+
 enum ChineseZodiac
 {
     MAYMUN, HOROZ, KOPEK, DOMUZ, FARE, OKUZ,
@@ -18,12 +39,20 @@ public class Main
 
         String zodiac = zodiacCalculator(birthYear % 12);
         String zodiacTwo = zodiacCalculatorTwo(birthYear % 12);
+        String zodiacThree = zodiacCalculatorThree(birthYear % 12);
 
 
         System.out.println("Çin Zodyağı Burcunuz: " + zodiac);
         System.out.println("Çin Zodyağı Burcunuz (2): " + zodiacTwo);
+        System.out.println("Çin Zodyağı Burcunuz (3): " + zodiacThree);
     }
 
+    /**
+     * Çin Zodyağı burcunu switch-case yapısı kullanarak döner.
+     *
+     * @param modBirthYear Doğum yılının 12 ye bölünmesinden kalan değer
+     * @return Burç adı / Geçersiz ise ("Unknown")
+     * */
     private static String zodiacCalculator(int modBirthYear)
     {
         return switch (modBirthYear)
@@ -44,7 +73,12 @@ public class Main
         };
     }
 
-    // İkinci yol, daha kısa ve alternatif
+    /**
+     * Çin Zodyağı burcunu sabit dizi üzerinden hesaplar.
+     *
+     * @param modBirthYear Doğum yılının 12 ye bölümünden kalan değer
+     * @return Burç adı / Geçersizse ("Unknown")
+     * */
 
     private static String zodiacCalculatorTwo(int modBirthYear)
     {
@@ -63,7 +97,12 @@ public class Main
         }
     }
 
-    // Üçüncü yol, enum kullanarak daha da kısaltmak
+    /**
+     * Çin Zodyağı burcunu {@link ChineseZodiac} enum sınıfı üzerinden hesaplanır.
+     *
+     * @param modBirthYear Doğum yılının 12 ye bölümünden kalan değer
+     * @return Enum'dan gelen burç adı / Geçersizse "Unknown"
+     * */
 
     private static String zodiacCalculatorThree(int modBirthYear)
     {
