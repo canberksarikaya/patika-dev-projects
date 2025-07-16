@@ -44,6 +44,7 @@ public class Main
      * Verilen yılın artık yıl olup olmadığını hesaplar ve sonucu ekrana yazdırır.
      *
      * @param year Kontrol edilecek yıl
+     * @return Boolean değer döndürür (Artık yıl ise -> True / Artık yıl değilse -> False)
      * */
     private static boolean leapYearCalculator(int year)
     {
