@@ -2,14 +2,40 @@ package patika.ucakbileti;
 
 import java.util.Scanner;
 
+/**
+ * <p>
+ *     Bu uygulama, kullanıcının girdiği mesafe (km), yaş ve yolculuk tipine göre
+ *     uçak bileti hesaplama uygulamasıdır.
+ * </p>
+ *
+ * <p>
+ *     Uygulama içerisinde belirtilen indirim şekilleri şunlardır;
+ *     <ul>
+ *         <li>12 yaş altı: %50 indirim</li>
+ *         <li>12-24 yaş arası: %10 indirim</li>
+ *         <li>65 yaş üstü: %30 indirim</li>
+ *         <li>Gidiş Dönüş bilet: %20 indirim ve 2 ile çarpılacak</li>
+ *     </ul>
+ * </p>
+ *
+ *
+ * @author Canberk Sarıkaya
+ * @version 1.0
+ * */
+
 public class Main
 {
     static Scanner input = new Scanner(System.in);
 
+    /** Kilometre başına ücret */
     static final double kmDiscount = 0.10;
+    /** Gidiş Dönüş indirimi oranı */
     static final double travelTypeDiscount = 0.20;
+    /** 12 yaş altı indirim oranı */
     static final double underTwelveDiscount = 0.5;
+    /** 12-24 yaş altı indirim oranı */
     static final double underTwentyFourDiscount = 0.1;
+    /** 65 yaş üstü indirim oranı */
     static final double upperSixtyFiveDiscount = 0.3;
 
     public static void main(String[] args)
@@ -36,6 +62,14 @@ public class Main
         System.out.println(totalPrice + " TL");
     }
 
+    /**
+     * Kullanıcının mesafe, yaş ve yolculuk tipine göre toplam bilet fiyatını hesaplar.
+     *
+     * @param km Mesafe(Kilometre cinsinden)
+     * @param age Yolcunun yaşı
+     * @param travelType Yolculuk Tipi (1: tek yön, 2: gidiş-dönüş)
+     * @return Toplam bilet fiyatı (TL cinsinden, tam sayı olarak)
+     * */
     private static int totalPrice(int km, int age, int travelType)
     {
         double totalPrice = switch (travelType)
@@ -63,6 +97,13 @@ public class Main
         return (int) totalPrice;
     }
 
+    /**
+     * Yaşa göre uygun indirimi uygular ve indirimli fiyatı döner.
+     *
+     * @param totalPrice İndirim öncesi bilet fiyatı
+     * @param age Yolcunun yaşı
+     * @return Yaş indirimi uygulanmış bilet fiyatı
+     * */
     private static double ageDiscountCalculator(double totalPrice, int age)
     {
         if (age < 12)
