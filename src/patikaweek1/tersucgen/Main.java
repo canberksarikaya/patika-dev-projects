@@ -13,7 +13,7 @@ public class Main
     public static void main(String[] args)
     {
         Scanner input = new Scanner(System.in);
-        System.out.println("Bir sayı giriniz: ");
+        System.out.println("Bir basamak giriniz: ");
         int stepNumber = input.nextInt();
         oppositeTriangle(stepNumber);
     }
