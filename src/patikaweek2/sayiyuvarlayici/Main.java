@@ -15,6 +15,8 @@ public class Main
         System.out.println("Ondalıklı sayı giriniz: ");
         double decimalNumber = input.nextDouble();
         decimalToNumber(decimalNumber);
+
+
     }
 
     /**
