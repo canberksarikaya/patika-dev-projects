@@ -1,25 +1,12 @@
 package patikaweek2.maashesaplayici;
 
 /**
- * {@code Employee} sınıfı, bir çalışanın ismini, maaşını, çalışma saatini ve
- * işe alım yılını tutar. Bu değerlere göre çalışanın vergisini, bonusunu ve maaş
- * arttırımını hesaplar.
- *
+ * Uygulamanın ana giriş noktası.
  * <p>
- *     Bu sınıf aşağıdaki özellikleri destekler:
- *     <ul>
- *         <li>Vergi hesaplama</li>
- *         <li>Fazla mesaiye göre bonus hesaplama</li>
- *         <li>Kıdeme göre maaş artışı hesaplama</li>
- *         <li>Tüm detayları yazdırma</li>
- *     </ul>
+ * {@code Employee} sınıfını kullanarak bir çalışanın maaş detayları hesaplanır
+ * ve ekrana yazdırılır.
  * </p>
- * <p>
- *     Ödev kapsamında CURRENT_YEAR sabit olarak 2021 kabul edilmiştir.
- *     Ödev kapsamında, set state'ler kullanılmamış, göstermelik hesaplamalar
- *     kabul edilmiştir.
- * </p>
- * */
+ */
 public class Main
 {
     public static void main(String[] args)
