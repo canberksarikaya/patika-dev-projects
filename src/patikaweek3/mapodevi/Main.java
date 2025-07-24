@@ -1,6 +1,7 @@
 package patikaweek3.mapodevi;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 /**
  * <p>
@@ -12,7 +13,7 @@ public class Main
 {
     public static void main(String[] args)
     {
-        HashMap<String, Integer> scoresMap = new HashMap<>();
+        LinkedHashMap<String, Integer> scoresMap = new LinkedHashMap<>();
         scoresMap.put("Ali", 85);
         scoresMap.put("Ayşe", 92);
         scoresMap.put("Mehmet", 78);
@@ -27,7 +28,7 @@ public class Main
      * döndürür.
      * @param map Kullanıcının oluşturduğu HashMap
      */
-    private static void printMap(HashMap<String, Integer> map)
+    private static void printMap(LinkedHashMap<String, Integer> map)
     {
         map.forEach((key, value) ->
                 System.out.println(key + " = " + value));
