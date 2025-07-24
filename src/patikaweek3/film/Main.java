@@ -18,10 +18,12 @@ public class Main
         filmList.add(new Film("Film Four", 2015, "Musical", 4.9));
         filmList.add(new Film("Film Five", 2025, "Survival", 1.5));
         // filmList.add(new Film("Film Six", 2025, "Survival", 1.5));
+        filmList.add(new Film("Film Seven", 2013, "Horror", 4.2));
 
         sortBasedOnImdbRatings(filmList);
         sortBasedOnPublishYear(filmList);
         filterFilmBasedOnGenre(filmList, "Survival");
+        doubleSort(filmList);
     }
 
     /**
@@ -66,6 +68,23 @@ public class Main
             {
                 System.out.println("Film adı: " + film.getFilmName() + " Film Genre: " + film.getFilmGenre());
             }
+        }
+    }
+
+    /**
+     * Film koleksiyonunu hem IMDb puanını büyükten küçüğe olacak şekilde, hem de
+     * yayın yılı küçükten büyüğe olacak şekilde sıralar.
+     * @param filmList
+     */
+    private static void doubleSort(ArrayList<Film> filmList)
+    {
+        filmList.sort(Comparator.comparingDouble(Film::getImdbRating).reversed()
+                .thenComparingInt(Film::getPublicationYear));
+        System.out.println("IMDb puanı büyükten küçüğe ve Yayın yılı küçükten büyüğe;");
+        for (Film film : filmList)
+        {
+            System.out.println("Film adı: " + film.getFilmName() + " IMDb Puanı: " + film.getImdbRating()
+            + " Film Yayın Yılı: " + film.getPublicationYear());
         }
     }
 }
