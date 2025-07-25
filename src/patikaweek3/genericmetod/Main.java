@@ -2,6 +2,11 @@ package patikaweek3.genericmetod;
 
 import java.util.Arrays;
 
+/**
+ * <p>
+ *     Uygulama, generic method ile birlikte Array tiplerini yazdırır.
+ * </p>
+ */
 public class Main
 {
     public static void main(String[] args)
