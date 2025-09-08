@@ -1,0 +1,28 @@
+// K ile başlayan, en uzun replacement_cost (4 adet)
+SELECT *
+FROM film
+WHERE title LIKE 'K%'
+ORDER BY length DESC, replacement_cost ASC, title ASC
+LIMIT 4;
+
+// En fazla film içeren
+SELECT rating, COUNT(*) AS film_sayisi
+FROM film
+GROUP BY rating
+ORDER BY film_sayisi DESC
+LIMIT 1;
+
+// En çok alışveriş yapan müşteri
+SELECT c.first_name, c.last_name, COUNT(*) AS odeme_sayisi
+FROM payment p
+JOIN customer c ON c.customer_id = p.customer_id
+GROUP BY c.customer_id, c.first_name, c.last_name
+ORDER BY odeme_sayisi DESC
+LIMIT 1;
+
+// Kategori isimleri ve kategori başına film sayısı
+SELECT cat.name AS category_name, COUNT(fc.film_id) AS film_sayisi
+FROM category cat
+JOIN film_category fc ON fc.category_id = cat.category_id
+GROUP BY cat.category_id, cat.name
+ORDER BY film_sayisi DESC, category_name ASC;
