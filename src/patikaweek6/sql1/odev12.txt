@@ -1,0 +1,22 @@
+// Ortalamadan uzun
+SELECT COUNT(*) AS uzun_filmler
+FROM film
+WHERE length > (SELECT AVG(length) FROM film);
+
+// En yüksek rental_rate
+SELECT COUNT(*) AS en_yuksek_rental_rate_film_sayisi
+FROM film
+WHERE rental_rate = (SELECT MAX(rental_rate) FROM film);
+
+// En düşük rental_rate ve replacement_cost
+SELECT *
+FROM film
+WHERE rental_rate = (SELECT MIN(rental_rate) FROM film)
+  AND replacement_cost = (SELECT MIN(replacement_cost) FROM film);
+
+// En çok alışveriş yapan müşteriler
+SELECT customer_id, COUNT(*) AS toplam_odeme
+FROM payment
+GROUP BY customer_id
+ORDER BY toplam_odeme DESC;
+
