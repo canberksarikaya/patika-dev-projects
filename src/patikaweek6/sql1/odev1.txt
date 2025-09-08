@@ -1,0 +1,47 @@
+// employee table creating
+CREATE TABLE employee (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50),
+    birthday DATE,
+    email VARCHAR(100)
+);
+
+// example of inserting
+INSERT INTO employee (name, birthday, email)
+
+// UPDATE examples
+UPDATE employee
+SET name = 'Canberk Sarıkaya'
+WHERE id = 5;
+
+UPDATE employee
+SET email = 'canberk@gmail.com'
+WHERE name = 'Kaan';
+
+UPDATE employee
+SET name = 'Kaan'
+WHERE birthday = '2000-06-06';
+
+UPDATE employee
+SET birthday = '2000-03-16'
+WHERE email = 'canberk@gmail.com';
+
+UPDATE employee
+SET name = 'Moruks'
+WHERE id > 20;
+
+// DELETE examples
+DELETE FROM employee
+WHERE id = 10;
+
+DELETE FROM employee
+WHERE name = 'canberk';
+
+DELETE FROM employee
+WHERE birthday < '2000-01-01';
+
+DELETE FROM employee
+WHERE email = 'kaan@gmail.com';
+
+DELETE FROM employee
+WHERE id BETWEEN 25 AND 30;
