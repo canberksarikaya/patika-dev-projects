@@ -1,0 +1,30 @@
+// Film tablosunda Title ve Description Sıralama
+SELECT title, description
+FROM film
+ORDER BY title ASC
+
+// Length > 60 length <75 (uzunluğa göre)
+SELECT *
+FROM film
+WHERE length > 60
+  AND length < 75
+ORDER BY length ASC, title ASC;
+
+// rental_rate = 0.99 ve (replacement_cost = 12.99 veya 28.99)
+SELECT *
+FROM film
+WHERE rental_rate = 0.99
+  AND (replacement_cost = 12.99 OR replacement_cost = 28.99)
+ORDER BY rental_rate ASC, replacement_cost ASC, title ASC;
+
+// customer first_name = "Mary" (last_name)
+SELECT last_name
+FROM customer
+WHERE first_name = 'Mary';
+
+// length <= 50 ve rental_rate != 2.99 veya != 4.99
+SELECT *
+FROM film
+WHERE length <= 50
+  AND rental_rate NOT IN (2.99, 4.99)
+ORDER BY length ASC, rental_rate ASC, title ASC;
