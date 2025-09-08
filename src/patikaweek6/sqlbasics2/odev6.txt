@@ -1,0 +1,18 @@
+// rental_rate ort
+SELECT AVG(rental_rate) AS avg_rental_rate
+FROM film;
+
+// 'C' ile başlayan film sayısı
+SELECT COUNT(*) AS count_c_titles
+FROM film
+WHERE title LIKE 'C%';
+
+// rental_rate = 0.99 olan en uzun film
+SELECT MAX(length) AS max_length_at_0_99
+FROM film
+WHERE rental_rate = 0.99;
+
+// uzunluk > 150 dk (kaç farklı replacement_cost)
+SELECT COUNT(DISTINCT replacement_cost) AS distinct_replacement_cost_over_150
+FROM film
+WHERE length > 150;
