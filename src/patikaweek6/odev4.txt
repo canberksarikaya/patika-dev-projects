@@ -1,0 +1,24 @@
+// film -> replacement_cost (birbirinden farklı değerler)
+SELECT DISTINCT replacement_cost
+FROM film
+ORDER BY replacement_cost;
+
+// film -> replacement_cost (birbirinden farklı kaç değer)
+SELECT COUNT(DISTINCT replacement_cost) AS distinct_replacement_cost_count
+FROM film;
+
+// film -> adı 'T' ile başlayan rating 'G'
+SELECT COUNT(*) AS count_t_start_and_g_rating
+FROM film
+WHERE title LIKE 'T%'
+  AND rating = 'G';
+
+// country -> adı 5 karakter
+SELECT COUNT(*) AS five_char_country_count
+FROM country
+WHERE char_length(country) = 5;
+
+// city -> adı 'r' ile biten
+SELECT COUNT(*) AS ends_with_r_city_count
+FROM city
+WHERE city ILIKE '%r';
