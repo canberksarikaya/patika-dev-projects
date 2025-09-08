@@ -1,0 +1,14 @@
+// actor ve customer
+SELECT first_name FROM actor
+UNION
+SELECT first_name FROM customer;
+
+// actor ve customer
+SELECT first_name FROM actor
+INTERSECT
+SELECT first_name FROM customer;
+
+// actor'da olup customer'da olmayan
+SELECT first_name FROM actor
+EXCEPT
+SELECT first_name FROM customer;
