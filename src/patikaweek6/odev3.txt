@@ -1,0 +1,26 @@
+// country 'A' (başlayan) 'a' (biten)
+SELECT country
+FROM country
+WHERE country LIKE 'A%a'
+ORDER BY country;
+
+// country (en az 6 karakter ve 'n' ile biten)
+SELECT country
+FROM country
+WHERE char_length(country) >= 6
+  AND country LIKE '%n'
+ORDER BY country;
+
+// film (adına 4 adet 't' harfi geçen)
+SELECT title
+FROM film
+WHERE (length(lower(title)) - length(replace(lower(title), 't', ''))) >= 4
+ORDER BY title;
+
+// film -> title 'C', length > 90 ve rental_rate = 2.99
+SELECT *
+FROM film
+WHERE title LIKE 'C%'
+  AND length > 90
+  AND rental_rate = 2.99
+ORDER BY length, title;
