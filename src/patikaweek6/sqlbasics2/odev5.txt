@@ -1,0 +1,21 @@
+// Title -> 'n' ile biten en uzun
+SELECT *
+FROM film
+WHERE title ILIKE '%n'
+ORDER BY length DESC, title ASC
+LIMIT 5;
+
+// Title -> 'n' ile biten en kısa film (6-10)
+SELECT *
+FROM film
+WHERE title ILIKE '%n'
+ORDER BY length ASC, title ASC
+OFFSET 5
+LIMIT 5;
+
+// customer -> store_id = 1, last_name azalacak (ilk 4 kayıt)
+SELECT *
+FROM customer
+WHERE store_id = 1
+ORDER BY last_name DESC, first_name DESC, customer_id DESC
+LIMIT 4;
